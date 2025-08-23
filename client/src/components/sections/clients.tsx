@@ -265,15 +265,15 @@ export function Clients() {
           <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">18+</div>
+                <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
                 <div className="text-gray-600">Happy Clients</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">1000+</div>
                 <div className="text-gray-600">Projects Completed</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-orange-600 mb-2">99%</div>
+                <div className="text-3xl font-bold text-orange-600 mb-2">96%</div>
                 <div className="text-gray-600">Client Satisfaction</div>
               </div>
             </div>

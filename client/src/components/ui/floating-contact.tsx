@@ -22,7 +22,7 @@ export default function FloatingContact() {
     {
       icon: Mail,
       label: "Email Us",
-      href: "mailto:info@onestopsolutions.com",
+      href: "mailto:info@allinonepay.in",
       bgColor: "bg-red-600 hover:bg-red-700"
     },
     {
@@ -45,8 +45,11 @@ export default function FloatingContact() {
       icon: Calendar,
       label: "Book Meeting",
       onClick: () => {
-        // You can replace this with your actual booking system
-        window.open("https://calendly.com/onestopsolutions", "_blank");
+        // Scroll to contact form instead of external site
+        const element = document.getElementById('contact');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
         setIsOpen(false);
       },
       bgColor: "bg-orange-600 hover:bg-orange-700"
