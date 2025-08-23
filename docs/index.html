@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="/" />
+    <base href="/">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>All In One - Smart IT, Secure Banking, Stunning Websites | Professional Technology Services</title>
@@ -100,8 +100,8 @@
       "email": "info@allinonepay.in"
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-B9PjL-3y.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CYgTm1nM.css">
+    <script type="module" crossorigin src="assets/index-B9PjL-3y.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-CYgTm1nM.css">
   </head>
   <body>
     <div id="root"></div>
@@ -121,8 +121,16 @@
         }
       }(window.location))
     </script>
-    
+    
+
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>
 </html>
+<script>
+  const redirect = sessionStorage.redirect;
+  if (redirect) {
+    sessionStorage.removeItem("redirect");
+    history.replaceState(null, "", redirect);
+  }
+</script>
