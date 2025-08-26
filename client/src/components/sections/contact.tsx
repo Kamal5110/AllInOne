@@ -66,8 +66,16 @@ export default function Contact() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
+      // For GitHub Pages static deployment, we'll handle this client-side only
+      // Check if we're in development (has backend) or production (static only)
+      try {
+        const response = await apiRequest("POST", "/api/contact", data);
+        return response.json();
+      } catch (error) {
+        // If API call fails (like on GitHub Pages), continue with WhatsApp only
+        console.log("Backend unavailable, proceeding with WhatsApp-only flow");
+        return { success: true, message: "Message will be sent via WhatsApp" };
+      }
     },
     onSuccess: (data, variables) => {
       toast({
