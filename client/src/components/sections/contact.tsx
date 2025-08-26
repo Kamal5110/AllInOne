@@ -30,16 +30,56 @@ export default function Contact() {
 
   const { toast } = useToast();
 
+  const createWhatsAppMessage = (data: ContactFormData) => {
+    const serviceNames = {
+      hardware: "Hardware Support",
+      banking: "Banking Support", 
+      web: "Web Development & Digital",
+      consultation: "General Consultation"
+    };
+    
+    const serviceName = serviceNames[data.service as keyof typeof serviceNames] || data.service;
+    
+    const message = `🔔 *New Contact Form Submission*
+
+👤 *Name:* ${data.name}
+📧 *Email:* ${data.email}
+📱 *Phone:* ${data.phone}
+🛠️ *Service:* ${serviceName}
+💬 *Message:* ${data.message || "No additional message provided"}
+
+---
+📅 *Submitted:* ${new Date().toLocaleString()}
+🌐 *Source:* All In One Website Contact Form`;
+
+    return encodeURIComponent(message);
+  };
+
+  const sendToWhatsApp = (data: ContactFormData) => {
+    const whatsappNumber = "919660306030"; // Your business WhatsApp number
+    const message = createWhatsAppMessage(data);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
   const contactMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
       const response = await apiRequest("POST", "/api/contact", data);
       return response.json();
     },
-    onSuccess: (data) => {
+    onSuccess: (data, variables) => {
       toast({
         title: "Message Sent!",
-        description: data.message || "Thank you for your message! We'll get back to you soon.",
+        description: "Thank you for your message! We'll get back to you soon. Opening WhatsApp...",
       });
+      
+      // Send to WhatsApp after successful form submission
+      setTimeout(() => {
+        sendToWhatsApp(variables);
+      }, 1000);
+      
       setFormData({
         name: "",
         email: "",
@@ -189,6 +229,12 @@ export default function Contact() {
                 <MessageSquare className="mr-2 h-5 w-5" />
                 {contactMutation.isPending ? "Sending..." : "Send Message"}
               </Button>
+              
+              {/* WhatsApp Integration Notice */}
+              <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg flex items-center text-sm text-green-700">
+                <SiWhatsapp className="mr-2 h-4 w-4 text-green-600" />
+                <span>Your message will also be sent via WhatsApp for faster response</span>
+              </div>
             </form>
           </motion.div>
 
