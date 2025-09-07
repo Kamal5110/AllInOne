@@ -64,30 +64,11 @@ var contactMessages = pgTable("contact_messages", {
   message: text("message"),
   createdAt: timestamp("created_at").defaultNow()
 });
-var kundliRequests = pgTable("kundli_requests", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  phone: text("phone").notNull(),
-  gender: text("gender").notNull(),
-  dateOfBirth: text("date_of_birth").notNull(),
-  timeOfBirth: text("time_of_birth").notNull(),
-  placeOfBirth: text("place_of_birth").notNull(),
-  state: text("state").notNull(),
-  country: text("country").notNull(),
-  serviceType: text("service_type").notNull(),
-  additionalRequests: text("additional_requests"),
-  createdAt: timestamp("created_at").defaultNow()
-});
 var insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true
 });
 var insertContactMessageSchema = createInsertSchema(contactMessages).omit({
-  id: true,
-  createdAt: true
-});
-var insertKundliRequestSchema = createInsertSchema(kundliRequests).omit({
   id: true,
   createdAt: true
 });

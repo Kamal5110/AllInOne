@@ -60,16 +60,17 @@ export default function FloatingContact() {
     <>
       {/* Floating Contact Button */}
       <motion.div
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
+        className="fixed bottom-6 right-4 sm:bottom-8 sm:right-6 z-50 mb-safe"
+        style={{ bottom: "max(1.5rem, env(safe-area-inset-bottom))" }}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, duration: 0.3 }}
       >
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
         >
-          <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+          <Phone className="h-6 w-6 sm:h-7 sm:w-7" />
         </button>
       </motion.div>
 
@@ -88,13 +89,14 @@ export default function FloatingContact() {
 
             {/* Contact Panel */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: 100, y: 100 }}
+              initial={{ opacity: 0, scale: 0.8, x: 50, y: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, x: 100, y: 100 }}
+              exit={{ opacity: 0, scale: 0.8, x: 50, y: 50 }}
               transition={{ type: "spring", damping: 20, stiffness: 300 }}
-              className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-[95vw] sm:max-w-none"
+              className="fixed bottom-20 right-2 sm:bottom-24 sm:right-6 z-50"
+              style={{ bottom: "max(5rem, calc(env(safe-area-inset-bottom) + 4rem))" }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-72 sm:w-80 max-w-sm">
+              <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-[calc(100vw-1rem)] max-w-xs sm:max-w-sm mx-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div>

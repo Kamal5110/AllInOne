@@ -9,6 +9,7 @@ import Home from "@/pages/home";
 import HardwareSupport from "@/pages/hardware-support";
 import BankingSupport from "@/pages/banking-support";
 import WebDevelopment from "@/pages/web-development";
+import HoroscopeKundli from "@/pages/horoscope-kundli";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/hardware-support" component={HardwareSupport} />
       <Route path="/banking-support" component={BankingSupport} />
       <Route path="/web-development" component={WebDevelopment} />
+      <Route path="/horoscope-kundli" component={HoroscopeKundli} />
       <Route component={NotFound} />
     </Switch>
   );

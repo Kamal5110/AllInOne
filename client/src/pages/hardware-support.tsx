@@ -112,9 +112,11 @@ export default function HardwareSupport() {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
                 alt="Computer hardware repair and maintenance" 
                 className="rounded-2xl shadow-lg w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             <motion.div
@@ -218,19 +220,25 @@ export default function HardwareSupport() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
           >
             <img 
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=75" 
               alt="Laptop repair service" 
               className="rounded-xl shadow-lg w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <img 
-              src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+              src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=75" 
               alt="Network installation" 
               className="rounded-xl shadow-lg w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <img 
-              src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+              src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=75" 
               alt="Computer components" 
               className="rounded-xl shadow-lg w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 

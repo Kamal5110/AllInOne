@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Settings, Menu, X, ChevronDown, Monitor, Building, Globe } from "lucide-react";
+import { Settings, Menu, X, ChevronDown, Monitor, Building, Globe, Stars } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLocation } from "wouter";
 
@@ -81,6 +81,12 @@ export default function Header() {
                 >
                   <Globe className="inline mr-2 h-4 w-4" />Web Development
                 </button>
+                <button 
+                  onClick={() => navigateToPage("/horoscope-kundli")}
+                  className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                >
+                  <Stars className="inline mr-2 h-4 w-4" />Horoscope & Kundli
+                </button>
               </div>
             </div>
 
@@ -145,6 +151,12 @@ export default function Header() {
                 className="block w-full text-left text-gray-700 hover:text-primary-600 py-1 px-4"
               >
                 Web Development
+              </button>
+              <button 
+                onClick={() => navigateToPage("/horoscope-kundli")}
+                className="block w-full text-left text-gray-700 hover:text-primary-600 py-1 px-4"
+              >
+                Horoscope & Kundli
               </button>
             </div>
             <button 

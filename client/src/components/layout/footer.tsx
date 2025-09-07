@@ -113,6 +113,14 @@ export default function Footer() {
                   Digital Marketing
                 </button>
               </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection("services")}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Horoscope & Kundli Making
+                </button>
+              </li>
             </ul>
           </div>
 

@@ -19,6 +19,21 @@ img, video {
   height: auto;
 }
 
+/* Improve image loading performance */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* Performance optimizations for animations */
+.animate-pulse, .animate-bounce, .animate-spin {
+  will-change: transform;
+}
+
+/* Optimize fonts */
+.font-bold, .font-semibold {
+  font-display: swap;
+}
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   * {

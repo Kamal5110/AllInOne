@@ -21,9 +21,11 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" 
               alt="Professional business office environment" 
               className="rounded-2xl shadow-lg w-full h-auto"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
           

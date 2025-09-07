@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Monitor, Building, Globe, CheckCircle } from "lucide-react";
+import { Monitor, Building, Globe, Stars, CheckCircle } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function Services() {
@@ -58,6 +58,21 @@ export default function Services() {
       color: "purple",
       buttonClass: "bg-purple-600 hover:bg-purple-700",
       path: "/web-development"
+    },
+    {
+      icon: Stars,
+      title: "Horoscope & Kundli Making ✨",
+      description: "Accurate astrological predictions and personalized Kundli reports based on ancient Vedic astrology principles.",
+      features: [
+        "Detailed Birth Chart Analysis",
+        "Marriage Compatibility Reports",
+        "Career & Finance Predictions",
+        "Health & Wellness Guidance",
+        "Gemstone Recommendations"
+      ],
+      color: "pink",
+      buttonClass: "bg-pink-600 hover:bg-pink-700",
+      path: "/horoscope-kundli"
     }
   ];
 
@@ -101,7 +116,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8"
         >
           {services.map((service, index) => {
             const IconComponent = service.icon;

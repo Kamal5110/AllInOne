@@ -185,9 +185,11 @@ export default function WebDevelopment() {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
                 alt="Web development and digital marketing" 
                 className="rounded-2xl shadow-lg w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             <motion.div
